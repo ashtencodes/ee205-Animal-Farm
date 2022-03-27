@@ -16,7 +16,7 @@ bool updateCatName(int index, char name[]);
 
 bool fixCat(int index);
 
-bool updateCatWeight (int index, float newWeight);
+bool updateCatWeight (int index, Weight newWeight);
 
 bool updateCollar1 ( int index, enum Color newColor );
 bool updateCollar2 ( int index, enum Color newColor );

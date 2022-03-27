@@ -49,7 +49,7 @@ bool isValidName( const char checkName[] ){
     return true;
 }
 
-bool isValidWeight( const float checkWeight ){
+bool isValidWeight( const Weight checkWeight ){
     if(checkWeight > 0){
         return true;
     } else {

@@ -44,7 +44,7 @@ bool fixCat(int index){
     return false;
 }
 
-bool updateCatWeight (int index, float newWeight){
+bool updateCatWeight (int index, Weight newWeight){
     if ( isValidWeight(newWeight) ){
         catArray[index].weight = newWeight;
         return true;

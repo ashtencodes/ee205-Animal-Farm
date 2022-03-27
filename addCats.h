@@ -16,7 +16,7 @@ bool addCat( const char newName[],
              const enum Gender addGender,
              const enum Breed addBreed,
              const bool isFixed,
-             const float weight,
+             const Weight weight,
              const enum Color collarColor1,
              const enum Color collarColor2,
              const unsigned long long license );
