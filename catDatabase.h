@@ -15,13 +15,14 @@
 #define MAX_NUM_CATS 30
 #define NAME_LEN_MAX 50
 
-extern int currentCatNum;
+typedef float Weight;
+typedef int NumCat;
+
+extern NumCat currentCatNum;
 
 enum Gender { UNKNOWN_GENDER, MALE, FEMALE };
 enum Breed { UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHINX };
 enum Color { BLACK, WHITE, RED, BLUE, GREEN, PINK };
-
-typedef float Weight;
 
 struct Cat {
     enum Gender gender;

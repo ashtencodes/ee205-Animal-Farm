@@ -14,7 +14,7 @@
 #include "config.h"
 #include <stdio.h>
 
-int currentCatNum = 0;
+NumCat currentCatNum = 0;
 
 struct Cat catArray[MAX_NUM_CATS];
 
