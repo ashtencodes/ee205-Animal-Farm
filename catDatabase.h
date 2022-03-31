@@ -12,6 +12,7 @@
 #pragma once
 #include <stdbool.h>
 #include <cstring>
+#include <cassert>
 
 #define MAX_NUM_CATS 30
 #define NAME_LEN_MAX 50
@@ -24,18 +25,18 @@ extern NumCat currentCatNum;
 
 enum Gender { UNKNOWN_GENDER, MALE, FEMALE };
 enum Breed { UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHINX };
-enum Color { BLACK, WHITE, RED, BLUE, GREEN, PINK };
+
+extern bool validateDatabase();
+extern bool isValidName( const char checkName[] );
+extern bool isValidWeight( const Weight checkWeight ) ;
 
 class Cat{
 public:
     char name[NAME_LEN_MAX];
     enum Gender gender;
     enum Breed breed;
-    enum Color collarColor1;
-    enum Color collarColor2;
     bool isFixed;
     Weight weight;
-    unsigned long long license;
     Cat* next;
 
     Cat(){
@@ -46,7 +47,13 @@ public:
     }
 
     Cat (const char* newName, const Gender newGender, const Breed newBreed, const Weight newWeight){
+        assert( isValidName( newName ) );
+        assert( isValidWeight( newWeight ) );
+        strcpy(name, newName);
         isFixed = false;
+        gender = newGender;
+        breed = newBreed;
+        weight = newWeight;
     }
 
     ~Cat(){
@@ -63,9 +70,4 @@ public:
 };
 
 extern Cat *catDatabaseHeadPointer;
-
-extern bool validateDatabase();
-
-extern bool isValidName( const char checkName[] );
-extern bool isValidWeight( const Weight checkWeight ) ;
 

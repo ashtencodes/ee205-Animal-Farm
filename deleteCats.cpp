@@ -10,23 +10,16 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <string.h>
-#include <stdio.h>
 
 #include "deleteCats.h"
 #include "catDatabase.h"
 #include "config.h"
 
-/*void deleteAllCats(){
-    while ( currentCatNum != 0 ) {
-        deleteCat( 0 );
-    }
+void deleteAllCats(){
+    assert( validateDatabase() );
+    catDatabaseHeadPointer = nullptr;
 }
 
 bool deleteCat(int index){
-    if( isValidIndex(index) ){
-        return true;
-    } else {
-        fprintf( stderr, "%s: Index must be less than [%d]\n", PROGRAM_NAME, MAX_NUM_CATS);
-        return false;
-    }
-}*/
+    assert( validateDatabase() );
+}
