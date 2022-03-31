@@ -25,6 +25,14 @@ NumCat currentCatNum = 0;
 Cat *catDatabaseHeadPointer = nullptr;
 
 bool validateDatabase(){
+    Cat* currentCatPointer = catDatabaseHeadPointer;
+
+    while(currentCatPointer != nullptr){
+        assert(isValidName( currentCatPointer->name ));
+        assert(isValidWeight( currentCatPointer->weight ));
+        currentCatPointer = currentCatPointer->next;
+    }
+
     return true;
 }
 
