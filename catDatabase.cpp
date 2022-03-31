@@ -21,7 +21,7 @@ NumCat currentCatNum = 0;
 
 Cat *catDatabaseHeadPointer = nullptr;
 
-bool isValidIndex( const int index ){
+/*bool isValidIndex( const int index ){
     if( index >= 0 && index < MAX_NUM_CATS){
         fprintf( stderr, "valid index\n", PROGRAM_NAME);
         return true;
@@ -52,7 +52,7 @@ bool isValidWeight( const Weight checkWeight ){
         fprintf( stderr, "%s: Weight cannot be less than 0\n", PROGRAM_NAME);
         return false;
     }
-}
+}*/
 
 bool Cat::print() {
     return false;

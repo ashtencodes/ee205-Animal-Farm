@@ -20,6 +20,7 @@ const char* genderList[] = { "UNKNOWN_GENDER", "MALE", "FEMALE" };
 const char* breedList[] = { "UNKNOWN_BREED", "MAINE_COON", "MANX", "SHORTHAIR", "PERSIAN", "SPHINX" };
 const char* colorList[] = { "BLACK", "WHITE", "RED", "BLUE", "GREEN", "PINK" };
 
+/*
 bool printCat(int indexNum){
     if( !isValidIndex(indexNum) ){
         fprintf( stderr, "%s: Bad Cat [%d]\n", PROGRAM_NAME, indexNum);
@@ -45,4 +46,5 @@ int findCat(char name[]){
     fprintf( stderr, "%s: cat index: [%d]\n", PROGRAM_NAME, targetIndex);
     return targetIndex;
 }
+*/
 

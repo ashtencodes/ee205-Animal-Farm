@@ -16,7 +16,7 @@
 #include "catDatabase.h"
 #include "config.h"
 
-void deleteAllCats(){
+/*void deleteAllCats(){
     while ( currentCatNum != 0 ) {
         deleteCat( 0 );
     }
@@ -29,4 +29,4 @@ bool deleteCat(int index){
         fprintf( stderr, "%s: Index must be less than [%d]\n", PROGRAM_NAME, MAX_NUM_CATS);
         return false;
     }
-}
+}*/

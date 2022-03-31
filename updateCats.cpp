@@ -16,6 +16,7 @@ using namespace std;
 #include <iostream>
 #include <string.h>
 
+/*
 bool updateCatName(int index, char name[]){
     bool isDuplicate = false;
     for( int indexNum = 0; indexNum < MAX_NUM_CATS; indexNum++ ){
@@ -63,4 +64,5 @@ bool updateCollar2 ( int index, enum Color newColor ){
 bool updateLicense ( int index, unsigned long long newLicense ){
     return true;
 }
+*/
 
