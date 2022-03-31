@@ -22,6 +22,7 @@ bool addCat( Cat* newCat ){
     assert( validateDatabase() );
 
     newCat->next = catDatabaseHeadPointer;
+    catDatabaseHeadPointer = newCat;
     currentCatNum++;
 
     assert( validateDatabase() );

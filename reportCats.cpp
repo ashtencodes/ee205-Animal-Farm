@@ -16,11 +16,13 @@ using namespace std;
 #include <iostream>
 #include <string.h>
 
-const char* genderList[] = { "UNKNOWN_GENDER", "MALE", "FEMALE" };
-const char* breedList[] = { "UNKNOWN_BREED", "MAINE_COON", "MANX", "SHORTHAIR", "PERSIAN", "SPHINX" };
-
 void printAllCats(){
     assert( validateDatabase() );
+    Cat* currentCatPointer = catDatabaseHeadPointer;
+    while(currentCatPointer != nullptr){
+        currentCatPointer->print();
+        currentCatPointer = currentCatPointer->next;
+    }
 }
 
 int findCat(char name[]){

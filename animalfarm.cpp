@@ -21,12 +21,19 @@ using namespace std;
 
 int main(){
     cout << "Starting " << PROGRAM_NAME << endl;
-    Cat("Loki", MALE, PERSIAN, 1.0);
-    Cat("Milo", MALE, MANX, 1.1);
-    Cat("Bella", FEMALE, MAINE_COON, 1.2);
-    Cat("Kali", FEMALE, SHORTHAIR, 1.3);
-    Cat("Trin", FEMALE, MANX, 1.4);
-    Cat("Chili", MALE, SHORTHAIR, 1.5);
+    Cat* Loki = new Cat("Loki", MALE, PERSIAN, 1.0);
+    addCat(Loki);
+    Cat* Milo = new Cat("Milo", MALE, MANX, 1.1);
+    addCat(Milo);
+    Cat* Bella = new Cat("Bella", FEMALE, MAINE_COON, 1.2);
+    addCat(Bella);
+    Cat* Kali = new Cat("Kali", FEMALE, SHORTHAIR, 1.3);
+    addCat(Kali);
+    Cat* Trin = new Cat("Trin", FEMALE, MANX, 1.4);
+    addCat(Trin);
+    Cat* Chili = new Cat("Chili", MALE, SHORTHAIR, 1.5);
+    addCat(Chili);
+    printAllCats();
     cout << "Done with " << PROGRAM_NAME << endl;
     return( 1 ) ;
 }
