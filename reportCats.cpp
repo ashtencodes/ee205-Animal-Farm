@@ -9,9 +9,11 @@
 /// @date   19_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 
+using namespace std;
+
 #include "reportCats.h"
 #include "config.h"
-#include <stdio.h>
+#include <iostream>
 #include <string.h>
 
 const char* genderList[] = { "UNKNOWN_GENDER", "MALE", "FEMALE" };
@@ -23,13 +25,13 @@ bool printCat(int indexNum){
         fprintf( stderr, "%s: Bad Cat [%d]\n", PROGRAM_NAME, indexNum);
         return false;
     }
-    printf("cat index = [%d] name=[%s] gender=[%s] breed=[%s] isFixed=[%d] weight=[%f], collar1=[%s], collar2=[%s], license=[%llu]\n", indexNum, catArray[indexNum].name, genderList[catArray[indexNum].gender], breedList[catArray[indexNum].breed], catArray[indexNum].isFixed, catArray[indexNum].weight, colorList[catArray[indexNum].collarColor1], colorList[catArray[indexNum].collarColor2], catArray[indexNum].license);
+    cout << "cat index = [" << indexNum << "] name = [" << catArray[indexNum].name << "] gender = [" <<  genderList[catArray[indexNum].gender] << "] breed = [" << breedList[catArray[indexNum].breed] << "] isFixed = [" << catArray[indexNum].isFixed << "] weight = [" << catArray[indexNum].weight << "] collar1 = [" << colorList[catArray[indexNum].collarColor1] << "] collar2 = [" << colorList[catArray[indexNum].collarColor2] << "] license = [" << catArray[indexNum].license << endl;
     return true;
 }
 
 void printAllCats(){
     for( int indexNum = 0; indexNum < MAX_NUM_CATS; indexNum++ ){
-        printf("cat index = [%d] name=[%s] gender=[%s] breed=[%s] isFixed=[%d] weight=[%f], collar1=[%s], collar2=[%s], license=[%llu]\n", indexNum, catArray[indexNum].name, genderList[catArray[indexNum].gender], breedList[catArray[indexNum].breed], catArray[indexNum].isFixed, catArray[indexNum].weight, colorList[catArray[indexNum].collarColor1], colorList[catArray[indexNum].collarColor2], catArray[indexNum].license);
+        cout << "cat index = [" << indexNum << "] name = [" << catArray[indexNum].name << "] gender = [" <<  genderList[catArray[indexNum].gender] << "] breed = [" << breedList[catArray[indexNum].breed] << "] isFixed = [" << catArray[indexNum].isFixed << "] weight = [" << catArray[indexNum].weight << "] collar1 = [" << colorList[catArray[indexNum].collarColor1] << "] collar2 = [" << colorList[catArray[indexNum].collarColor2] << "] license = [" << catArray[indexNum].license << endl;
     }
 }
 

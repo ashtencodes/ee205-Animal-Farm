@@ -9,9 +9,11 @@
 /// @date   19_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 
+using namespace std;
+
 #include "updateCats.h"
 #include "config.h"
-#include <stdio.h>
+#include <iostream>
 #include <string.h>
 
 bool updateCatName(int index, char name[]){
@@ -34,7 +36,7 @@ bool updateCatName(int index, char name[]){
 bool fixCat(int index){
     if( isValidIndex(index) ){
         if(catArray[index].isFixed == false){
-            printf("Neutered [%s]!\n", catArray[index].name);
+            cout << "Neutered [" << catArray[index].name << "]" << endl;
             catArray[index].isFixed = true;
             return true;
         }

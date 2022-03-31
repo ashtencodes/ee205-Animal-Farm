@@ -8,8 +8,9 @@
 /// @author @Ashten Akemoto <aakemoto@hawaii.edu>
 /// @date   19_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
+using namespace std;
 
-#include <stdio.h>
+#include <iostream>
 #include <assert.h>
 
 #include "config.h"
@@ -24,7 +25,7 @@
 //#define DEBUG
 
 int main(){
-    printf( "Starting %s\n", PROGRAM_NAME ) ;
+    cout << "Starting " << PROGRAM_NAME << endl;
     addCat( "Loki", MALE, PERSIAN, true, 8.5, BLACK, WHITE, 101 ) ;
     addCat( "Milo", MALE, MANX, true, 7.0, BLACK, RED, 102 ) ;
     addCat( "Bella", FEMALE, MAINE_COON, true, 18.2, BLACK, BLUE, 103 ) ;
@@ -65,6 +66,6 @@ int main(){
     printAllCats() ;
     deleteAllCats() ;
     printAllCats() ;
-    printf( "Done with %s\n", PROGRAM_NAME ) ;
+    cout << "Done with " << PROGRAM_NAME << endl;
     return( 1 ) ;
 }
