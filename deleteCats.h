@@ -13,7 +13,7 @@
 
 #include "catDatabase.h"
 
-void deleteAllCats();
+bool deleteAllCats();
 
-bool deleteCat(int index);
+bool deleteCat( Cat* targetCatPointer );
 

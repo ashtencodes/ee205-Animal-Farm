@@ -14,11 +14,39 @@
 #include "catDatabase.h"
 #include "config.h"
 
-void deleteAllCats(){
+bool deleteCat(Cat* targetCatPointer){
+    assert( targetCat != nullptr );
     assert( validateDatabase() );
-    catDatabaseHeadPointer = nullptr;
+    Cat* currentCatPointer = catDatabaseHeadPointer;
+
+    if(currentCatPointer == targetCatPointer){
+        catDatabaseHeadPointer = catDatabaseHeadPointer->next;
+        delete targetCatPointer;
+        currentCatNum --;
+
+        assert( validateDatabase() );
+        return true;
+    }
+
+    while(currentCatPointer != targetCatPointer){
+        if(currentCatPointer == targetCatPointer){
+            currentCatPointer->next = targetCatPointer->next;
+            delete targetCatPointer;
+            currentCatNum--;
+
+            assert( validateDatabase() );
+            return true;
+        } else {
+            currentCatPointer = currentCatPointer->next;
+        }
+    }
 }
 
-bool deleteCat(int index){
+bool deleteAllCats(){
     assert( validateDatabase() );
+    while(catDatabaseHeadPointer != nullptr){
+        deleteCat(catDatabaseHeadPointer);
+    }
+
+    return true;
 }

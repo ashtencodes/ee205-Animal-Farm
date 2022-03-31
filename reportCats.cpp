@@ -13,8 +13,6 @@ using namespace std;
 
 #include "reportCats.h"
 #include "config.h"
-#include <iostream>
-#include <string.h>
 
 void printAllCats(){
     assert( validateDatabase() );

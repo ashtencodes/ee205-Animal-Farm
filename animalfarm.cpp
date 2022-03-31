@@ -34,6 +34,13 @@ int main(){
     Cat* Chili = new Cat("Chili", MALE, SHORTHAIR, 1.5);
     addCat(Chili);
     printAllCats();
+    deleteCat(Chili);
+    cout << endl;
+    printAllCats();
+    cout << endl;
+    deleteAllCats();
+    cout << endl;
+    printAllCats();
     cout << "Done with " << PROGRAM_NAME << endl;
     return( 1 ) ;
 }
