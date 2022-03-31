@@ -57,14 +57,15 @@ public:
         breed = UNKNOWN_BREED;
     }
 
-private:
     bool print();
+
     bool validate();
 };
 
 extern Cat *catDatabaseHeadPointer;
 
-extern bool isValidIndex( const int index );
+extern bool validateDatabase();
+
 extern bool isValidName( const char checkName[] );
 extern bool isValidWeight( const Weight checkWeight ) ;
 
