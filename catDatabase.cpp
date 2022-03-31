@@ -8,15 +8,18 @@
 /// @author @Ashten Akemoto <aakemoto@hawaii.edu>
 /// @date   19_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
+using namespace std;
+
+#define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
 
 #include <string.h>
 #include "catDatabase.h"
 #include "config.h"
-#include <stdio.h>
+#include <iostream>
 
 NumCat currentCatNum = 0;
 
-struct Cat catArray[MAX_NUM_CATS];
+Cat *catDatabaseHeadPointer = nullptr;
 
 bool isValidIndex( const int index ){
     if( index >= 0 && index < MAX_NUM_CATS){
@@ -39,13 +42,6 @@ bool isValidName( const char checkName[] ){
         return false;
     };
 
-    for( int indexNum = 0; indexNum < MAX_NUM_CATS; indexNum++ ){
-        if( strcmp(catArray[indexNum].name, checkName) == 0 ){
-            fprintf( stderr, "%s: Duplicate name found!\n", PROGRAM_NAME);
-            return false;
-        }
-    }
-
     return true;
 }
 
@@ -58,3 +54,10 @@ bool isValidWeight( const Weight checkWeight ){
     }
 }
 
+bool Cat::print() {
+    return false;
+}
+
+bool Cat::validate() {
+    return false;
+}

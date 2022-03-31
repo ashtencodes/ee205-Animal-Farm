@@ -25,7 +25,6 @@ bool updateCatName(int index, char name[]){
     }
 
     if(!isDuplicate){
-        strcpy(catArray[index].name, name);
         return true;
     } else {
         fprintf( stderr, "%s: Duplicate name! [%s]\n", PROGRAM_NAME, name);
@@ -37,7 +36,6 @@ bool fixCat(int index){
     if( isValidIndex(index) ){
         if(catArray[index].isFixed == false){
             cout << "Neutered [" << catArray[index].name << "]" << endl;
-            catArray[index].isFixed = true;
             return true;
         }
     } else {
@@ -48,7 +46,6 @@ bool fixCat(int index){
 
 bool updateCatWeight (int index, Weight newWeight){
     if ( isValidWeight(newWeight) ){
-        catArray[index].weight = newWeight;
         return true;
     } else {
         return false;
@@ -56,17 +53,14 @@ bool updateCatWeight (int index, Weight newWeight){
 }
 
 bool updateCollar1 ( int index, enum Color newColor ){
-    catArray[index].collarColor1 = newColor;
     return true;
 }
 
 bool updateCollar2 ( int index, enum Color newColor ){
-    catArray[index].collarColor2 = newColor;
     return true;
 }
 
 bool updateLicense ( int index, unsigned long long newLicense ){
-    catArray[index].license = newLicense;
     return true;
 }
 

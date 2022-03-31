@@ -11,9 +11,11 @@
 
 #pragma once
 #include <stdbool.h>
+#include <cstring>
 
 #define MAX_NUM_CATS 30
 #define NAME_LEN_MAX 50
+#define UNKNOWN_WEIGHT -1
 
 typedef float Weight;
 typedef int NumCat;
@@ -24,7 +26,9 @@ enum Gender { UNKNOWN_GENDER, MALE, FEMALE };
 enum Breed { UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHINX };
 enum Color { BLACK, WHITE, RED, BLUE, GREEN, PINK };
 
-struct Cat {
+class Cat{
+public:
+    char name[NAME_LEN_MAX];
     enum Gender gender;
     enum Breed breed;
     enum Color collarColor1;
@@ -32,10 +36,33 @@ struct Cat {
     bool isFixed;
     Weight weight;
     unsigned long long license;
-    char name[NAME_LEN_MAX];
+    Cat* next;
+
+    Cat(){
+        isFixed = false;
+        weight = UNKNOWN_WEIGHT;
+        gender = UNKNOWN_GENDER;
+        breed = UNKNOWN_BREED;
+    }
+
+    Cat (const char* newName, const Gender newGender, const Breed newBreed, const Weight newWeight){
+        isFixed = false;
+    }
+
+    ~Cat(){
+        memset(name, 0, sizeof(name));
+        isFixed = false;
+        weight = UNKNOWN_WEIGHT;
+        gender = UNKNOWN_GENDER;
+        breed = UNKNOWN_BREED;
+    }
+
+private:
+    bool print();
+    bool validate();
 };
 
-extern struct Cat catArray[];
+extern Cat *catDatabaseHeadPointer;
 
 extern bool isValidIndex( const int index );
 extern bool isValidName( const char checkName[] );
