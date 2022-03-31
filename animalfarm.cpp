@@ -21,6 +21,12 @@ using namespace std;
 
 int main(){
     cout << "Starting " << PROGRAM_NAME << endl;
+    Cat("Loki", MALE, PERSIAN, 1.0);
+    Cat("Milo", MALE, MANX, 1.1);
+    Cat("Bella", FEMALE, MAINE_COON, 1.2);
+    Cat("Kali", FEMALE, SHORTHAIR, 1.3);
+    Cat("Trin", FEMALE, MANX, 1.4);
+    Cat("Chili", MALE, SHORTHAIR, 1.5);
     cout << "Done with " << PROGRAM_NAME << endl;
     return( 1 ) ;
 }
