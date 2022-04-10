@@ -82,3 +82,46 @@ bool Cat::validate() {
     }
     return true;
 }
+
+char *Cat::getName() {
+    return name;
+}
+
+void Cat::setName(const char newName[] ) {
+    assert( isValidName( newName ) );
+    strcpy( name, newName );
+}
+
+Gender Cat::getGender() {
+    return gender;
+}
+
+void Cat::setGender(Gender newGender) {
+    gender = newGender;
+}
+
+Breed Cat::getBreed() {
+    return breed;
+}
+
+void Cat::setBreed(Breed newBreed) {
+    breed = newBreed;
+}
+
+bool Cat::checkIsFixed() {
+    return isFixed;
+}
+
+void Cat::fixCat() {
+    assert( isFixed == false );
+    isFixed = true;
+}
+
+Weight Cat::getWeight() {
+    return weight;
+}
+
+void Cat::setWeight(Weight newWeight) {
+    assert( isValidWeight( newWeight ) );
+    weight = newWeight;
+}

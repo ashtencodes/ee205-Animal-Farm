@@ -16,4 +16,4 @@ bool printCat(int indexNum);
 
 void printAllCats();
 
-int findCat(char name[]);
+Cat* findCat(const char name[]);

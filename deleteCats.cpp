@@ -15,7 +15,7 @@
 #include "config.h"
 
 bool deleteCat(Cat* targetCatPointer){
-    assert( targetCat != nullptr );
+    assert( targetCatPointer != nullptr );
     assert( validateDatabase() );
     Cat* currentCatPointer = catDatabaseHeadPointer;
 
@@ -47,6 +47,5 @@ bool deleteAllCats(){
     while(catDatabaseHeadPointer != nullptr){
         deleteCat(catDatabaseHeadPointer);
     }
-
     return true;
 }

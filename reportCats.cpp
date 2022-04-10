@@ -23,9 +23,14 @@ void printAllCats(){
     }
 }
 
-int findCat(char name[]){
-    int targetIndex = -1;
-    return targetIndex;
+Cat* findCat(const char name[]){
+    assert( isValidName( name ) );
+
+    for( Cat* currentCatPointer = catDatabaseHeadPointer; currentCatPointer != nullptr; currentCatPointer = currentCatPointer->next ){
+        if( strcmp( name, currentCatPointer->getName() ) == 0 ){
+            return currentCatPointer;
+        }
+    }
 }
 
 

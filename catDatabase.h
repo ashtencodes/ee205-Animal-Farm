@@ -31,13 +31,26 @@ extern bool isValidName( const char checkName[] );
 extern bool isValidWeight( const Weight checkWeight ) ;
 
 class Cat{
-public:
+protected:
     char name[NAME_LEN_MAX];
     enum Gender gender;
     enum Breed breed;
     bool isFixed;
     Weight weight;
+
+public:
     Cat* next;
+
+    char* getName();
+    void setName( const char newName[] );
+    Gender getGender();
+    void setGender( Gender newGender );
+    Breed getBreed();
+    void setBreed( Breed newBreed );
+    bool checkIsFixed();
+    void fixCat();
+    Weight getWeight();
+    void setWeight( Weight newWeight );
 
     Cat(){
         isFixed = false;
@@ -65,7 +78,6 @@ public:
     }
 
     bool print();
-
     bool validate();
 };
 
