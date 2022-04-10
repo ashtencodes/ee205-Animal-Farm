@@ -28,8 +28,8 @@ bool validateDatabase(){
     Cat* currentCatPointer = catDatabaseHeadPointer;
 
     while(currentCatPointer != nullptr){
-        assert(isValidName( currentCatPointer->name ));
-        assert(isValidWeight( currentCatPointer->weight ));
+        assert(isValidName( currentCatPointer->getName() ));
+        assert(isValidWeight( currentCatPointer->getWeight() ));
         currentCatPointer = currentCatPointer->next;
     }
 
@@ -64,11 +64,11 @@ bool Cat::print() {
     cout << setfill( ' ' ) ;
     cout << left ;
     cout << boolalpha ;
-    FORMAT_LINE( "Cat", "name" ) << name << endl ;
-    FORMAT_LINE( "Cat", "gender" ) << genderList[gender] << endl ;
-    FORMAT_LINE( "Cat", "breed" ) << breedList[breed] << endl ;
-    FORMAT_LINE( "Cat", "isFixed" ) << isFixed << endl ;
-    FORMAT_LINE( "Cat", "weight" ) << weight << endl ;
+    FORMAT_LINE( "Cat", "name" ) << getName() << endl ;
+    FORMAT_LINE( "Cat", "gender" ) << genderList[getGender()] << endl ;
+    FORMAT_LINE( "Cat", "breed" ) << breedList[getBreed()] << endl ;
+    FORMAT_LINE( "Cat", "isFixed" ) << checkIsFixed() << endl ;
+    FORMAT_LINE( "Cat", "weight" ) << getWeight() << endl ;
     return true ;
 }
 

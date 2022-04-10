@@ -10,11 +10,11 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #pragma once
+
 #include <stdbool.h>
 #include <cstring>
 #include <cassert>
 
-#define MAX_NUM_CATS 30
 #define NAME_LEN_MAX 50
 #define UNKNOWN_WEIGHT -1
 

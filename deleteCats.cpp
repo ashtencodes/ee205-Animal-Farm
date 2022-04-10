@@ -11,7 +11,6 @@
 
 #include <string.h>
 #include "deleteCats.h"
-#include "catDatabase.h"
 #include "config.h"
 
 bool deleteCat(Cat* targetCatPointer){
@@ -22,7 +21,7 @@ bool deleteCat(Cat* targetCatPointer){
     if(currentCatPointer == targetCatPointer){
         catDatabaseHeadPointer = catDatabaseHeadPointer->next;
         delete targetCatPointer;
-        currentCatNum --;
+        currentCatNum--;
 
         assert( validateDatabase() );
         return true;

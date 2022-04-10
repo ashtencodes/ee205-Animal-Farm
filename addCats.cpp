@@ -10,10 +10,10 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <string.h>
+#include <cassert>
 
 #include "config.h"
 #include "addCats.h"
-#include <cassert>
 
 bool addCat( Cat* newCat ){
     assert( newCat != nullptr );

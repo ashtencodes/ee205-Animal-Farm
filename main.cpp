@@ -1,12 +1,10 @@
 #include <cstdlib>  // For EXIT_SUCCESS / EXIT_FAILURE
 #include <cassert>  // For assert()
+#include <cstring>  // For strcmp()
 #include <exception>  // For try/catch blocks
 #include <iostream>
 
-#define DEBUG
-
 #include "config.h"
-#include "catDatabase.h"
 #include "addCats.h"
 #include "reportCats.h"
 #include "deleteCats.h"
@@ -20,6 +18,7 @@ using namespace std ;
 ///           one character)
 #define ILLEGAL_NAME "12345678901234567890123456789012345678901234567890"
 
+#define DEBUG
 
 /// The entry point for Animal Farm
 int main() {
@@ -88,8 +87,6 @@ int main() {
 
         assert(testCat.validate());  // The cat should now be valid
         testCat.print() ;
-
-        assert(!isCatInDatabase(&testCat)) ;
     }
    #endif
 

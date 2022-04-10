@@ -16,6 +16,7 @@ using namespace std;
 
 void printAllCats(){
     assert( validateDatabase() );
+
     Cat* currentCatPointer = catDatabaseHeadPointer;
     while(currentCatPointer != nullptr){
         currentCatPointer->print();
