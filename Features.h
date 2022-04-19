@@ -17,3 +17,15 @@ enum class Gender {
     FEMALE
 };
 
+enum class Breed {
+    UNKNOWN_BREED = 0,
+    MAINE_COON,
+    MANX,
+    SHORTHAIR,
+    PERSIAN,
+    SPHINX
+};
+
+enum class Color {
+
+};

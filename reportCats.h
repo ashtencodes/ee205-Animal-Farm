@@ -12,9 +12,11 @@
 #pragma once
 
 #include "catDatabase.h"
+#include "config.h"
 
 bool printCat(int indexNum);
 
 void printAllCats();
 
 Cat* findCat(const char name[]);
+

@@ -11,7 +11,7 @@
 
 #pragma once
 
-#include "Gender.h"
+#include "Features.h"
 #include "Weight.h"
 
 #include <stdbool.h>
@@ -25,8 +25,6 @@
 typedef int NumCat;
 
 extern NumCat currentCatNum;
-
-enum Breed { UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHINX };
 
 extern bool validateDatabase();
 extern bool isValidName( const std::string checkName );
@@ -58,7 +56,7 @@ public:
         isFixed = false;
         weight = UNKNOWN_WEIGHT;
         gender = Gender::UNKNOWN_GENDER;
-        breed = UNKNOWN_BREED;
+        breed = Breed::UNKNOWN_BREED;
     }
 
     Cat (const std::string newName, const Gender newGender, const Breed newBreed, const Weight newWeight){
@@ -76,7 +74,7 @@ public:
         isFixed = false;
         weight = UNKNOWN_WEIGHT;
         gender = Gender::UNKNOWN_GENDER;
-        breed = UNKNOWN_BREED;
+        breed = Breed::UNKNOWN_BREED;
     }
 
     bool print();
