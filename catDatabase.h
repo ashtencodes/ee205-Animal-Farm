@@ -12,6 +12,7 @@
 #pragma once
 
 #include "Gender.h"
+#include "Weight.h"
 
 #include <stdbool.h>
 #include <cstring>
@@ -21,7 +22,6 @@
 #define NAME_LEN_MAX 50
 #define UNKNOWN_WEIGHT -1
 
-typedef float Weight;
 typedef int NumCat;
 
 extern NumCat currentCatNum;
@@ -51,7 +51,7 @@ public:
     void setBreed( Breed newBreed );
     bool checkIsFixed();
     void fixCat();
-    Weight getWeight();
+    Weight::t_weight getWeight();
     void setWeight( Weight newWeight );
 
     Cat(){

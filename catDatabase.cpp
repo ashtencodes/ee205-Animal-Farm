@@ -44,7 +44,7 @@ bool isValidName( const std::string checkName ){
 }
 
 bool isValidWeight( const Weight checkWeight ){
-    if(checkWeight > 0){
+    if(checkWeight.getWeight() > 0){
         return true;
     } else {
         fprintf( stderr, "%s: Weight cannot be less than 0\n", PROGRAM_NAME);
@@ -97,8 +97,8 @@ void Cat::fixCat() {
     isFixed = true;
 }
 
-Weight Cat::getWeight() {
-    return weight;
+Weight::t_weight Cat::getWeight() {
+    return weight.getWeight();
 }
 
 void Cat::setWeight(Weight newWeight) {
