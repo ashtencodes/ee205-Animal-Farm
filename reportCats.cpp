@@ -17,61 +17,6 @@ using namespace std;
 #include "config.h"
 #include <iomanip>
 
-std::ostream& operator<<( std::ostream& lhs_stream
-        ,const Weight::UnitOfWeight rhs_UnitOfWeight ) {
-    switch( rhs_UnitOfWeight ) {
-        case Weight::POUND: return lhs_stream << Weight::POUND_LABEL ;
-        case Weight::KILO: return lhs_stream << Weight::KILO_LABEL ;
-        case Weight::SLUG: return lhs_stream << Weight::SLUG_LABEL ;
-    }
-    return lhs_stream << Weight::POUND_LABEL ;
-}
-
-inline std::ostream& operator<<( std::ostream& lhs_stream, const Gender& rhs_Gender ){
-    switch( rhs_Gender ) {
-        case Gender::UNKNOWN_GENDER:
-            lhs_stream << "Unknown gender";
-            break;
-            case Gender::MALE:
-                lhs_stream << "Male";
-                break;
-                case Gender::FEMALE:
-                    lhs_stream << "Female";
-                    break;
-                    default:
-                        /// @throw out_of_range If the enum is not mapped to a string.
-                        throw std::out_of_range( PROGRAM_NAME ": Gender not mapped to a string" );
-    }
-    return lhs_stream;
-}
-
-inline std::ostream& operator<<( std::ostream& lhs_stream, const Breed& rhs_Breed ){
-    switch( rhs_Breed ) {
-        case Breed::UNKNOWN_BREED:
-            lhs_stream << "Unknown breed";
-            break;
-            case Breed::MAINE_COON:
-                lhs_stream << "Maine Coon";
-                break;
-                case Breed::MANX:
-                    lhs_stream << "Manx";
-                    break;
-                    case Breed::SHORTHAIR:
-                        lhs_stream << "Shorthair";
-                        break;
-                        case Breed::PERSIAN:
-                            lhs_stream << "Persian";
-                            break;
-                            case Breed::SPHINX:
-                                lhs_stream << "Sphinx";
-                                break;
-                                default:
-                                    /// @throw out_of_range If the enum is not mapped to a string.
-                                    throw std::out_of_range( PROGRAM_NAME ": Gender not mapped to a string" );
-    }
-    return lhs_stream;
-}
-
 bool Cat::print() {
     assert( validate() ) ;
     cout << setw(80) << setfill( '=' ) << "" << endl ;

@@ -11,7 +11,9 @@
 
 #pragma once
 
-#include "Features.h"
+#include "Gender.h"
+#include "Breed.h"
+#include "Color.h"
 #include "Weight.h"
 
 #include <stdbool.h>
