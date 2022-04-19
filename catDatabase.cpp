@@ -10,13 +10,9 @@
 ///////////////////////////////////////////////////////////////////////////////
 using namespace std;
 
-#define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
-
 #include <string.h>
 #include "catDatabase.h"
 #include "config.h"
-#include <iostream>
-#include <iomanip>
 
 NumCat currentCatNum = 0;
 
@@ -54,20 +50,6 @@ bool isValidWeight( const Weight checkWeight ){
         fprintf( stderr, "%s: Weight cannot be less than 0\n", PROGRAM_NAME);
         return false;
     }
-}
-
-bool Cat::print() {
-    assert( validate() ) ;
-    cout << setw(80) << setfill( '=' ) << "" << endl ;
-    cout << setfill( ' ' ) ;
-    cout << left ;
-    cout << boolalpha ;
-    FORMAT_LINE( "Cat", "name" ) << getName() << endl ;
-    FORMAT_LINE( "Cat", "gender" ) << getGender() << endl ;
-    FORMAT_LINE( "Cat", "breed" ) << getBreed() << endl ;
-    FORMAT_LINE( "Cat", "isFixed" ) << checkIsFixed() << endl ;
-    FORMAT_LINE( "Cat", "weight" ) << getWeight() << endl ;
-    return true ;
 }
 
 bool Cat::validate() {

@@ -11,8 +11,43 @@
 
 using namespace std;
 
+#define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
+
 #include "reportCats.h"
 #include "config.h"
+#include <iomanip>
+
+inline std::ostream& operator<<( std::ostream& lhs_stream, const Gender& rhs_Gender ){
+    switch( rhs_Gender ) {
+        case Gender::UNKNOWN_GENDER:
+            lhs_stream << "Unknown gender";
+            break;
+            case Gender::MALE:
+                lhs_stream << "Male";
+                break;
+                case Gender::FEMALE:
+                    lhs_stream << "Female";
+                    break;
+                    default:
+                        /// @throw out_of_range If the enum is not mapped to a string.
+                        throw std::out_of_range( PROGRAM_NAME ": Gender not mapped to a string" );
+    }
+    return lhs_stream;
+}
+
+bool Cat::print() {
+    assert( validate() ) ;
+    cout << setw(80) << setfill( '=' ) << "" << endl ;
+    cout << setfill( ' ' ) ;
+    cout << left ;
+    cout << boolalpha ;
+    FORMAT_LINE( "Cat", "name" ) << getName() << endl ;
+    FORMAT_LINE( "Cat", "gender" ) << getGender() << endl ;
+    FORMAT_LINE( "Cat", "breed" ) << getBreed() << endl ;
+    FORMAT_LINE( "Cat", "isFixed" ) << checkIsFixed() << endl ;
+    FORMAT_LINE( "Cat", "weight" ) << getWeight() << endl ;
+    return true ;
+}
 
 void printAllCats(){
     assert( validateDatabase() );

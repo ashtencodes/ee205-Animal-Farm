@@ -11,6 +11,8 @@
 
 #pragma once
 
+#include "Gender.h"
+
 #include <stdbool.h>
 #include <cstring>
 #include <cassert>
@@ -24,7 +26,6 @@ typedef int NumCat;
 
 extern NumCat currentCatNum;
 
-enum Gender { UNKNOWN_GENDER, MALE, FEMALE };
 enum Breed { UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHINX };
 
 extern bool validateDatabase();
@@ -56,7 +57,7 @@ public:
     Cat(){
         isFixed = false;
         weight = UNKNOWN_WEIGHT;
-        gender = UNKNOWN_GENDER;
+        gender = Gender::UNKNOWN_GENDER;
         breed = UNKNOWN_BREED;
     }
 
@@ -74,7 +75,7 @@ public:
         name = '0';
         isFixed = false;
         weight = UNKNOWN_WEIGHT;
-        gender = UNKNOWN_GENDER;
+        gender = Gender::UNKNOWN_GENDER;
         breed = UNKNOWN_BREED;
     }
 
