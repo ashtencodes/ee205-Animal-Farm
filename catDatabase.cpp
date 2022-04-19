@@ -11,8 +11,6 @@
 using namespace std;
 
 #define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
-const char* genderList[] = { "UNKNOWN_GENDER", "MALE", "FEMALE" };
-const char* breedList[] = { "UNKNOWN_BREED", "MAINE_COON", "MANX", "SHORTHAIR", "PERSIAN", "SPHINX" };
 
 #include <string.h>
 #include "catDatabase.h"
@@ -36,13 +34,13 @@ bool validateDatabase(){
     return true;
 }
 
-bool isValidName( const char checkName[] ){
-    if(strlen(checkName) <= 0){
+bool isValidName( const std::string checkName ){
+    if(checkName.length() <= 0){
         fprintf( stderr, "%s: Name must be at least 1 character\n", PROGRAM_NAME);
         return false;
     }
 
-    if(strlen(checkName) >= NAME_LEN_MAX){
+    if(checkName.length() >= NAME_LEN_MAX){
         fprintf( stderr, "%s: Name length cannot be larger than [%d]\n", PROGRAM_NAME, NAME_LEN_MAX);
         return false;
     }
@@ -65,8 +63,8 @@ bool Cat::print() {
     cout << left ;
     cout << boolalpha ;
     FORMAT_LINE( "Cat", "name" ) << getName() << endl ;
-    FORMAT_LINE( "Cat", "gender" ) << genderList[getGender()] << endl ;
-    FORMAT_LINE( "Cat", "breed" ) << breedList[getBreed()] << endl ;
+    FORMAT_LINE( "Cat", "gender" ) << getGender() << endl ;
+    FORMAT_LINE( "Cat", "breed" ) << getBreed() << endl ;
     FORMAT_LINE( "Cat", "isFixed" ) << checkIsFixed() << endl ;
     FORMAT_LINE( "Cat", "weight" ) << getWeight() << endl ;
     return true ;
@@ -83,13 +81,13 @@ bool Cat::validate() {
     return true;
 }
 
-char *Cat::getName() {
+std::string Cat::getName() {
     return name;
 }
 
-void Cat::setName(const char newName[] ) {
+void Cat::setName(const std::string newName ) {
     assert( isValidName( newName ) );
-    strcpy( name, newName );
+    name = newName;
 }
 
 Gender Cat::getGender() {

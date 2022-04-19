@@ -18,8 +18,6 @@ using namespace std ;
 ///           one character)
 #define ILLEGAL_NAME "12345678901234567890123456789012345678901234567890"
 
-#define DEBUG
-
 /// The entry point for Animal Farm
 int main() {
     cout << "Starting " << PROGRAM_NAME << endl ;
@@ -90,7 +88,7 @@ int main() {
     }
    #endif
 
-   bool result ;
+    bool result ;
     result = addCat( new Cat( "Loki", MALE, PERSIAN, 1.0 )) ;
     assert( result ) ;
     if( !result ) throw logic_error (PROGRAM_NAME ": addCat() failed" ) ;

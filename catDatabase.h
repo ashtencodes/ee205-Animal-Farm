@@ -14,6 +14,7 @@
 #include <stdbool.h>
 #include <cstring>
 #include <cassert>
+#include <string>
 
 #define NAME_LEN_MAX 50
 #define UNKNOWN_WEIGHT -1
@@ -27,12 +28,12 @@ enum Gender { UNKNOWN_GENDER, MALE, FEMALE };
 enum Breed { UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHINX };
 
 extern bool validateDatabase();
-extern bool isValidName( const char checkName[] );
+extern bool isValidName( const std::string checkName );
 extern bool isValidWeight( const Weight checkWeight ) ;
 
 class Cat{
 protected:
-    char name[NAME_LEN_MAX];
+    std::string name;
     enum Gender gender;
     enum Breed breed;
     bool isFixed;
@@ -41,8 +42,8 @@ protected:
 public:
     Cat* next;
 
-    char* getName();
-    void setName( const char newName[] );
+    std::string getName();
+    void setName( const std::string newName );
     Gender getGender();
     void setGender( Gender newGender );
     Breed getBreed();
@@ -59,10 +60,10 @@ public:
         breed = UNKNOWN_BREED;
     }
 
-    Cat (const char* newName, const Gender newGender, const Breed newBreed, const Weight newWeight){
+    Cat (const std::string newName, const Gender newGender, const Breed newBreed, const Weight newWeight){
         assert( isValidName( newName ) );
         assert( isValidWeight( newWeight ) );
-        strcpy(name, newName);
+        name = newName;
         isFixed = false;
         gender = newGender;
         breed = newBreed;
@@ -70,7 +71,7 @@ public:
     }
 
     ~Cat(){
-        memset(name, 0, sizeof(name));
+        name = '0';
         isFixed = false;
         weight = UNKNOWN_WEIGHT;
         gender = UNKNOWN_GENDER;

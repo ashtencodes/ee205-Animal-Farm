@@ -24,11 +24,11 @@ void printAllCats(){
     }
 }
 
-Cat* findCat(const char name[]){
+Cat* findCat(const std::string name){
     assert( isValidName( name ) );
 
     for( Cat* currentCatPointer = catDatabaseHeadPointer; currentCatPointer != nullptr; currentCatPointer = currentCatPointer->next ){
-        if( strcmp( name, currentCatPointer->getName() ) == 0 ){
+        if( (name.compare(currentCatPointer->getName())) == 0 ){
             return currentCatPointer;
         }
     }
