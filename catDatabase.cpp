@@ -8,9 +8,11 @@
 /// @author @Ashten Akemoto <aakemoto@hawaii.edu>
 /// @date   19_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
+
 using namespace std;
 
 #include "catDatabase.h"
+#include "Cat.h"
 #include "config.h"
 
 NumCat currentCatNum = 0;
@@ -49,58 +51,4 @@ bool isValidWeight( const Weight checkWeight ){
         fprintf( stderr, "%s: Weight cannot be less than 0\n", PROGRAM_NAME);
         return false;
     }
-}
-
-bool Cat::validate() {
-    try {
-        isValidName( name ) ;
-        isValidWeight( weight ) ;
-    } catch (exception const& e) {
-        cout << e.what() << endl ;
-        return false ;
-    }
-    return true;
-}
-
-std::string Cat::getName() {
-    return name;
-}
-
-void Cat::setName(const std::string newName ) {
-    assert( isValidName( newName ) );
-    name = newName;
-}
-
-Gender Cat::getGender() {
-    return gender;
-}
-
-void Cat::setGender(Gender newGender) {
-    gender = newGender;
-}
-
-Breed Cat::getBreed() {
-    return breed;
-}
-
-void Cat::setBreed(Breed newBreed) {
-    breed = newBreed;
-}
-
-bool Cat::checkIsFixed() {
-    return isFixed;
-}
-
-void Cat::fixCat() {
-    assert( isFixed == false );
-    isFixed = true;
-}
-
-Weight::t_weight Cat::getWeight() {
-    return weight.getWeight();
-}
-
-void Cat::setWeight(Weight newWeight) {
-    assert( isValidWeight( newWeight ) );
-    weight = newWeight;
 }

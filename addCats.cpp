@@ -14,6 +14,7 @@
 
 #include "config.h"
 #include "addCats.h"
+#include "catDatabase.h"
 
 bool addCat( Cat* newCat ){
     assert( newCat != nullptr );

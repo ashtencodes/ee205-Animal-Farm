@@ -11,7 +11,7 @@
 
 #pragma once
 
-#include "catDatabase.h"
+#include "Cat.h"
 
 bool deleteAllCats();
 

@@ -10,6 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <string.h>
+#include "catDatabase.h"
 #include "deleteCats.h"
 #include "config.h"
 
