@@ -14,7 +14,17 @@
 #include "Cat.h"
 
 class Node {
+    friend class List;
+    friend class SinglyLinkedList;
+
 protected:
-    Cat* next;
+    Node* next = nullptr;
+    static bool compareByAddress( const Node* Node1, const Node* Node2 );
+
+public:
+    virtual void dump() const;
+    virtual bool validate() const noexcept;
+
+    virtual bool operator>(const Node& rhSide);
 };
 

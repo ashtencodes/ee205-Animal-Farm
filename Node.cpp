@@ -10,3 +10,31 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "Node.h"
+#include "config.h"
+
+void Node::dump() const {
+    FORMAT_LINE_FOR_DUMP( "Node", "this" ) << this << std::endl;
+    FORMAT_LINE_FOR_DUMP( "Node", "next" ) << next << std::endl;
+}
+
+bool Node::validate() const noexcept {
+    if(next == nullptr){
+        return true;
+    }
+    if(next == next->next){
+        return false;
+    }
+    return true;
+}
+
+bool Node::operator>(const Node &rhSide) {
+    return(compareByAddress(this, &(Node&)rhSide));
+}
+
+bool Node::compareByAddress(const Node* Node1, const Node* Node2) {
+    if (Node1 > Node2){
+        return true;
+    } else {
+        return false;
+    }
+}

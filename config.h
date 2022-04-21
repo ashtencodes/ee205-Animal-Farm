@@ -8,5 +8,19 @@
 /// @author @Ashten Akemoto <aakemoto@hawaii.edu>
 /// @date   19_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
+#pragma once
+#include <iomanip>
+#define PROGRAM_NAME "animalfarm3"
 
-#define PROGRAM_NAME "animalfarm2"
+#define PRINT_HEADING_FOR_DUMP                                                \
+/* Print =========================================================== */   \
+std::cout << std::setw(80) << std::setfill( '=' ) << "" << std::endl
+
+#define FORMAT_LINE_FOR_DUMP( className, member )         \
+std::cout << std::setfill( ' ' )  /* Space pad    */  \
+<< std::left            /* Left justify */  \
+<< std::boolalpha  /* Print `true` or `false` for `bool`s */ \
+<< std::setw( 8) << (className)             \
+<< std::setw(20) << (member)                \
+<< std::setw(52)  /* (data) */
+
