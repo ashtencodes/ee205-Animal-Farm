@@ -28,7 +28,7 @@ public:
     void deleteAllNodes() noexcept;
     virtual Node* popFront() noexcept=0;
     virtual void dump() noexcept=0;
-    virtual bool vaildate() const noexcept=0;
+    virtual bool validate() const noexcept=0;
 
     static Node* getNext(const Node* currentNode);
 };
