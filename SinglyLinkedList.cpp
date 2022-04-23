@@ -65,10 +65,12 @@ Node *SinglyLinkedList::popFront() noexcept {
 
 void SinglyLinkedList::dump() noexcept {
     std::cout << "SinglyLinkedList: head=[" << head << "]" << std::endl;
-    for( Node* iteratorNode = head; iteratorNode->next != nullptr; iteratorNode = iteratorNode->next ){
-        PRINT_HEADING_FOR_DUMP;
-        iteratorNode->dumpNode();
-        iteratorNode->dump();
+    if( head != nullptr ){
+        for( Node* iteratorNode = head; iteratorNode->next != nullptr; iteratorNode = iteratorNode->next ){
+            PRINT_HEADING_FOR_DUMP;
+            iteratorNode->dumpNode();
+            iteratorNode->dump();
+        }
     }
 }
 
