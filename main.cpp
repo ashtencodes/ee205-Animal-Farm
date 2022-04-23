@@ -16,8 +16,8 @@ int main() {
     catDB.pushFront( new Cat( "Trin", Color::WHITE, true, Gender::FEMALE, 1.4 ) ) ;
     catDB.insertAfter(catDB.getFirst(), new Cat( "Chili", Color::GINGER, true,
                                                    Gender::MALE, 1.5 ) );
-    for( Animal* pAnimal = (Animal*)catDB.get_first() ; pAnimal != nullptr ; pAnimal =
-            (Animal*)List::get_next( (Node*)pAnimal ) ) {
+    for( Animal* pAnimal = (Animal*)catDB.getFirst() ; pAnimal != nullptr ; pAnimal =
+            (Animal*)List::getNext( (Node*)pAnimal ) ) {
         cout << pAnimal->speak() << endl;
     }
     catDB.validate() ;

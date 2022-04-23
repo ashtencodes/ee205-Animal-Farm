@@ -34,4 +34,11 @@ public:
 
 public:
     std::string getName() const noexcept;
+    void setName( const std::string &newName );
+    bool isFixed() const noexcept;
+    void fixCat() noexcept;
+    std::string speak() const noexcept override;
+    void dump() const noexcept override;
+    bool validate() const noexcept override;
+    static bool validateName( const std::string &newName );
 };

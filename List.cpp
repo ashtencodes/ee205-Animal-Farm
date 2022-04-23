@@ -61,4 +61,10 @@ Node *List::getNext(const Node *currentNode) {
     return currentNode->next;
 }
 
+void List::deleteAllNodes() noexcept {
+    while( head != nullptr ){
+        popFront();
+    }
+}
+
 
