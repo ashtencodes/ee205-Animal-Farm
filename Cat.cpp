@@ -6,62 +6,15 @@
 /// @version 1.0
 ///
 /// @author @Ashten Akemoto <aakemoto@hawaii.edu>
-/// @date   21_Apr_2022
+/// @date   22_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "Cat.h"
-#include "catDatabase.h"
 
-bool Cat::validate() {
-    try {
-        isValidName( name ) ;
-        isValidWeight( weight ) ;
-    } catch (std::exception const& e) {
-        std::cout << e.what() << std::endl ;
-        return false ;
-    }
-    return true;
-}
+const std::string Cat::SPECIES_NAME = "Felis Catus";
+const Weight::t_weight Cat::MAX_WEIGHT = 40;
 
-std::string Cat::getName() {
-    return name;
-}
-
-void Cat::setName(const std::string newName ) {
-    assert( isValidName( newName ) );
+Cat::Cat(const std::string &newName) : Mammal( MAX_WEIGHT, SPECIES_NAME ){
     name = newName;
-}
-
-Gender Cat::getGender() {
-    return gender;
-}
-
-void Cat::setGender(Gender newGender) {
-    gender = newGender;
-}
-
-Breed Cat::getBreed() {
-    return breed;
-}
-
-void Cat::setBreed(Breed newBreed) {
-    breed = newBreed;
-}
-
-bool Cat::checkIsFixed() {
-    return isFixed;
-}
-
-void Cat::fixCat() {
-    assert( isFixed == false );
-    isFixed = true;
-}
-
-Weight::t_weight Cat::getWeight() {
-    return weight.getWeight();
-}
-
-void Cat::setWeight(Weight newWeight) {
-    assert( isValidWeight( newWeight ) );
-    weight = newWeight;
+    isCatFixed = false;
 }
