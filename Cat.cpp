@@ -49,7 +49,7 @@ void Cat::fixCat() noexcept {
 }
 
 std::string Cat::speak() const noexcept {
-    return "meow";
+    return "Meow";
 }
 
 void Cat::dump() const noexcept {

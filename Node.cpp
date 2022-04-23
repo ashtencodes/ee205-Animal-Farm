@@ -12,7 +12,7 @@
 #include "Node.h"
 #include "config.h"
 
-void Node::dump() const {
+void Node::dump() const noexcept{
     FORMAT_LINE_FOR_DUMP( "Node", "this" ) << this << std::endl;
     FORMAT_LINE_FOR_DUMP( "Node", "next" ) << next << std::endl;
 }
@@ -37,4 +37,9 @@ bool Node::compareByAddress(const Node* Node1, const Node* Node2) {
     } else {
         return false;
     }
+}
+
+void Node::dumpNode() const noexcept {
+    FORMAT_LINE_FOR_DUMP( "Node", "this" ) << this << std::endl;
+    FORMAT_LINE_FOR_DUMP( "Node", "next" ) << next << std::endl;
 }

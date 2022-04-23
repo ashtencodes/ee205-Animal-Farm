@@ -20,7 +20,8 @@ protected:
     static bool compareByAddress( const Node* Node1, const Node* Node2 );
 
 public:
-    virtual void dump() const;
+    virtual void dump() const noexcept;
+    void dumpNode() const noexcept;
     virtual bool validate() const noexcept;
 
     virtual bool operator>(const Node& rhSide);

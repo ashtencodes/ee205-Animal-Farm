@@ -35,6 +35,7 @@ public:
     std::string getSpecies() const noexcept;
     Gender getGender() const noexcept;
     Weight::t_weight getWeight() const noexcept;
+    Weight::t_weight getMaxWeight() const noexcept;
 
     void setWeight( const Weight::t_weight newWeight );
     virtual std::string speak() const noexcept=0;

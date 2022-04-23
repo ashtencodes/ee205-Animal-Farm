@@ -102,3 +102,7 @@ bool Animal::validate() const noexcept {
     assert( weight.vaidate() );
     return true;
 }
+
+Weight::t_weight Animal::getMaxWeight() const noexcept {
+    return weight.getMaxWeight();
+}
