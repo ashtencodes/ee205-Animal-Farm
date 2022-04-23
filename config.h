@@ -10,6 +10,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 #include <iomanip>
+#include <iostream>
+#define PROGRAM_TITLE "Animal Farm 3"
 #define PROGRAM_NAME "animalfarm3"
 
 #define PRINT_HEADING_FOR_DUMP                                                \

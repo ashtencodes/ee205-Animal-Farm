@@ -21,6 +21,9 @@ enum class Color {
     BLUE,
     GREEN,
     PINK,
+    CREAM,
+    BROWN,
+    CALICO
 };
 
 inline std::ostream& operator<<( std::ostream& lhs_stream, const Color& rhs_Color ){
@@ -45,6 +48,15 @@ inline std::ostream& operator<<( std::ostream& lhs_stream, const Color& rhs_Colo
             break;
         case Color::WHITE:
             lhs_stream << "White";
+            break;
+        case Color::CALICO:
+            lhs_stream << "Calico";
+            break;
+        case Color::BROWN:
+            lhs_stream << "Brown";
+            break;
+        case Color::CREAM:
+            lhs_stream << "Cream";
             break;
             default:
                         /// @throw out_of_range If the enum is not mapped to a string.

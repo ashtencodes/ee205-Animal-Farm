@@ -10,6 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "Animal.h"
+#include <cassert>
 
 const std::string Animal::KINGDOM_NAME = "Animalia";
 

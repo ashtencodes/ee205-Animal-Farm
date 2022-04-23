@@ -9,6 +9,7 @@
 /// @date   21_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 
+#include <stdexcept>
 #include "List.h"
 
 bool List::isEmpty() const noexcept {

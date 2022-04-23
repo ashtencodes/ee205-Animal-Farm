@@ -10,6 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "SinglyLinkedList.h"
+#include <cassert>
 
 SinglyLinkedList::SinglyLinkedList() {
 }

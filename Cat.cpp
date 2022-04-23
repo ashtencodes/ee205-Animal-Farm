@@ -13,8 +13,3 @@
 
 const std::string Cat::SPECIES_NAME = "Felis Catus";
 const Weight::t_weight Cat::MAX_WEIGHT = 40;
-
-Cat::Cat(const std::string &newName) : Mammal( MAX_WEIGHT, SPECIES_NAME ){
-    name = newName;
-    isCatFixed = false;
-}
