@@ -73,6 +73,7 @@ void SinglyLinkedList::dump() noexcept {
             iteratorNode->dump();
             iteratorNode = iteratorNode->next;
         }
+        PRINT_HEADING_FOR_DUMP;
     }
 }
 
