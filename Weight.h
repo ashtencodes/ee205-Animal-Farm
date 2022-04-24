@@ -68,3 +68,13 @@ public:
     static t_weight fromPoundToSlug(t_weight pound) noexcept;
     static t_weight convertWeight(t_weight fromWeight, UnitOfWeight fromUnit, UnitOfWeight toUnit) noexcept;
 };
+
+inline std::ostream& operator<<( std::ostream& lhs_stream
+        ,const Weight::UnitOfWeight rhs_UnitOfWeight ) {
+    switch( rhs_UnitOfWeight ) {
+        case Weight::POUND: return lhs_stream << Weight::POUND_LABEL ;
+        case Weight::KILO: return lhs_stream << Weight::KILO_LABEL ;
+        case Weight::SLUG: return lhs_stream << Weight::SLUG_LABEL ;
+    }
+    return lhs_stream << Weight::POUND_LABEL ;
+}

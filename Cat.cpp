@@ -52,6 +52,6 @@ std::string Cat::speak() const noexcept {
 
 void Cat::dump() const noexcept {
     Mammal::dump();
-    FORMAT_LINE_FOR_DUMP( "Cat", "Name") << name << std::endl;
-    FORMAT_LINE_FOR_DUMP( "Cat", "Is Fixed") << isCatFixed << std::endl;
+    FORMAT_LINE_FOR_DUMP( "Cat", "name") << name << std::endl;
+    FORMAT_LINE_FOR_DUMP( "Cat", "is fixed") << isCatFixed << std::endl;
 }

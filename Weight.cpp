@@ -21,16 +21,6 @@ const std::string Weight::POUND_LABEL = "Pound";
 const std::string Weight::KILO_LABEL = "Kilo";
 const std::string Weight::SLUG_LABEL = "Slug";
 
-std::ostream& operator<<( std::ostream& lhs_stream
-        ,const Weight::UnitOfWeight rhs_UnitOfWeight ) {
-    switch( rhs_UnitOfWeight ) {
-        case Weight::POUND: return lhs_stream << Weight::POUND_LABEL ;
-        case Weight::KILO: return lhs_stream << Weight::KILO_LABEL ;
-        case Weight::SLUG: return lhs_stream << Weight::SLUG_LABEL ;
-    }
-    return lhs_stream << Weight::POUND_LABEL ;
-}
-
 Weight::Weight() noexcept {
     bIsKnown = false;
     bHasMax = false;
