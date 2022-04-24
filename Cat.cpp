@@ -24,8 +24,6 @@ bool Cat::validateName(const std::string &newName) {
 
 bool Cat::validate() const noexcept {
     assert( validateName( name ) );
-    assert( Animal::validate() );
-
     return true;
 }
 

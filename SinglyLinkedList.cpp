@@ -66,16 +66,22 @@ Node *SinglyLinkedList::popFront() noexcept {
 void SinglyLinkedList::dump() noexcept {
     std::cout << "SinglyLinkedList: head=[" << head << "]" << std::endl;
     if( head != nullptr ){
-        for( Node* iteratorNode = head; iteratorNode->next != nullptr; iteratorNode = iteratorNode->next ){
+        Node* iteratorNode = head;
+        for( int i = 0; i < size(); i++ ){
             PRINT_HEADING_FOR_DUMP;
             iteratorNode->dumpNode();
             iteratorNode->dump();
+            iteratorNode = iteratorNode->next;
         }
     }
 }
 
 bool SinglyLinkedList::validate() const noexcept {
-    for( Node* iteratorNode = head; iteratorNode->next != nullptr; iteratorNode = iteratorNode->next ){
-        iteratorNode->validate();
+    if( head != nullptr ){
+        Node* iteratorNode = head;
+        for( int i = 0; i < size(); i++ ){
+            iteratorNode->validate();
+        }
     }
+    return true;
 }

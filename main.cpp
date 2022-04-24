@@ -20,7 +20,7 @@ int main() {
             (Animal*)List::getNext( (Node*)pAnimal ) ) {
         cout << pAnimal->speak() << endl;
     }
-    //catDB.validate() ;
+    catDB.validate() ;
     catDB.dump() ;
     catDB.deleteAllNodes() ;
     catDB.dump() ;
