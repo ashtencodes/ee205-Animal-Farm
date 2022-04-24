@@ -17,9 +17,9 @@ const Weight::t_weight Weight::UNKNOWN_WEIGHT = -1 ;
 const Weight::t_weight Weight::KILOS_IN_A_POUND = 0.453592 ;
 const Weight::t_weight Weight::SLUGS_IN_A_POUND = 0.031081 ;
 
-const std::string Weight::POUND_LABEL = "Pound";
-const std::string Weight::KILO_LABEL = "Kilo";
-const std::string Weight::SLUG_LABEL = "Slug";
+const std::string Weight::POUND_LABEL = "Pounds";
+const std::string Weight::KILO_LABEL = "Kilos";
+const std::string Weight::SLUG_LABEL = "Slugs";
 
 Weight::Weight() noexcept {
     bIsKnown = false;
