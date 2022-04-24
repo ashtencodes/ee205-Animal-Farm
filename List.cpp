@@ -10,6 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <stdexcept>
+#include <cassert>
 #include "List.h"
 
 bool List::isEmpty() const noexcept {
@@ -62,9 +63,14 @@ Node *List::getNext(const Node *currentNode) {
 }
 
 void List::deleteAllNodes() noexcept {
-    while( head != nullptr ){
+    assert( validate() );
+    while( head != nullptr ) {
         popFront();
     }
+    #ifdef DEBUG
+    cout << PROGRAM_NAME << ": All Nodes have been deleted" << endl ;
+    #endif
+    assert( validate() );
 }
 
 
