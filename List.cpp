@@ -28,7 +28,7 @@ bool List::isIn(Node *aNode) const noexcept {
 
     Node* currentNode = head;
 
-    while(currentNode != nullptr){
+    while(currentNode->next != nullptr){
         if(currentNode = aNode){
             return true;
         }

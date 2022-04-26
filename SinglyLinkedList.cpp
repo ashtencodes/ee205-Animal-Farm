@@ -13,8 +13,7 @@
 #include "config.h"
 #include <cassert>
 
-SinglyLinkedList::SinglyLinkedList() {
-}
+SinglyLinkedList::SinglyLinkedList() {}
 
 void SinglyLinkedList::pushFront( Node *newNode ) {
     assert( validate() );
@@ -82,6 +81,7 @@ bool SinglyLinkedList::validate() const noexcept {
         Node* iteratorNode = head;
         for( int i = 0; i < size(); i++ ){
             iteratorNode->validate();
+            iteratorNode = iteratorNode->next;
         }
     }
     return true;
