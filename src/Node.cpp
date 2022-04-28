@@ -18,21 +18,21 @@ void Node::dump() const noexcept{
 }
 
 bool Node::validate() const noexcept {
-    if(next == nullptr){
+    if( next == nullptr ){
         return true;
     }
-    if(next == next->next){
+    if( next == next->next ){
         return false;
     }
     return true;
 }
 
-bool Node::operator>(const Node &rhSide) {
+bool Node::operator>( const Node &rhSide ) {
     return(compareByAddress(this, &(Node&)rhSide));
 }
 
-bool Node::compareByAddress(const Node* Node1, const Node* Node2) {
-    if (Node1 > Node2){
+bool Node::compareByAddress( const Node* Node1, const Node* Node2 ) {
+    if ( Node1 > Node2 ){
         return true;
     } else {
         return false;

@@ -10,7 +10,9 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <stdexcept>
+#include <iostream>
 #include <cassert>
+#include "config.h"
 #include "List.h"
 
 bool List::isEmpty() const noexcept {
@@ -68,7 +70,7 @@ void List::deleteAllNodes() noexcept {
         popFront();
     }
     #ifdef DEBUG
-    cout << PROGRAM_NAME << ": All Nodes have been deleted" << endl ;
+    std::cout << PROGRAM_NAME << ": All Nodes have been deleted" << std::endl ;
     #endif
     assert( validate() );
 }

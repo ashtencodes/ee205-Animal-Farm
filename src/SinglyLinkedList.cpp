@@ -44,13 +44,13 @@ void SinglyLinkedList::insertAfter( Node *currentNode, Node *newNode ) {
 Node *SinglyLinkedList::popFront() noexcept {
     assert( validate() );
 
-    if(head == nullptr){
+    if( head == nullptr ){
         return nullptr;
     }
 
     Node* poppedNode = head;
 
-    if(head->next == nullptr){
+    if( head->next == nullptr ){
         head = nullptr;
     } else {
         head = head->next;

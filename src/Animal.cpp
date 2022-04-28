@@ -94,11 +94,10 @@ bool Animal::validateSpecies(const std::string &checkSpecies) noexcept {
 }
 
 bool Animal::validate() const noexcept {
-    assert( !getKingdom().empty );
     assert( validateClassification( getClassification() ) );
     assert( validateSpecies( getSpecies() ) );
 
-    assert( weight.vaidate() );
+    assert( weight.validate() );
     return true;
 }
 
